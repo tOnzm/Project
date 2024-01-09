@@ -1,44 +1,55 @@
 <template>
-  <div class="profile">
-    <div class="top">
-      <div class="stats">
-        <img src="@/static/logo/t6.png" alt="" />
-        <div class="statsData">
-          <h5>Matches</h5>
-          <h2>20</h2>
+  <div class="body">
+    <div>
+      <h1>ก็อป AAA</h1>
+      <h1 style="color: #37003c">Featured Manager</h1>
+      <div class="profile">
+        <div class="top">
+          <div class="stats">
+            <img src="@/static/logo/t6.png" alt="" />
+            <div class="statsData">
+              <h5>Matches</h5>
+              <h2>20</h2>
+            </div>
+            <div class="statsData">
+              <h5>Wins</h5>
+              <h2>12</h2>
+            </div>
+            <div class="statsData">
+              <h5>Drows</h5>
+              <h2>3</h2>
+            </div>
+            <div class="statsData">
+              <h5>Losses</h5>
+              <h2>5</h2>
+            </div>
+          </div>
+          <div class="imageWarp">
+            <img src="@/static/logo/manager/man41881.png" alt="" />
+          </div>
         </div>
-        <div class="statsData">
-          <h5>Wins</h5>
-          <h2>12</h2>
+        <div class="bottom">
+          <div class="name">
+            <h3>Ange</h3>
+            <h1>Postecoglou</h1>
+          </div>
+          <div class="footer">
+            <div class="nationality">
+              <img src="@/static/logo/flag/AU.png" alt="" />
+              <h5>Australia</h5>
+            </div>
+            <div class="btn">
+              <button>View Profile</button>
+              <v-icon>mdi-arrow-right</v-icon>
+            </div>
+          </div>
         </div>
-        <div class="statsData">
-          <h5>Drows</h5>
-          <h2>3</h2>
-        </div>
-        <div class="statsData">
-          <h5>Losses</h5>
-          <h2>5</h2>
-        </div>
-      </div>
-      <div class="imageWarp">
-        <img src="@/static/logo/manager/man41881.png" alt="" />
       </div>
     </div>
-    <div class="bottom">
-      <div class="name">
-        <h3>Ange</h3>
-        <h1>Postecoglou</h1>
-      </div>
-      <div class="footer">
-        <div class="nationality">
-          <img src="@/static/logo/flag/AU.png" alt="" />
-          <h5>Australia</h5>
-        </div>
-        <div class="btn">
-          <button>View Profile</button>
-          <v-icon>mdi-arrow-right</v-icon>
-        </div>
-      </div>
+
+    <div>
+      <h1>ต้นแบบ</h1>
+      <img src="@/static/logo/001.png" alt="" />
     </div>
   </div>
 </template>
@@ -69,6 +80,7 @@ export default {}
       width: 500px;
       background: #f0f0f0b9;
       position: relative;
+
       img {
         top: 20%;
         right: -10%;
@@ -76,6 +88,8 @@ export default {}
         width: 280px;
         object-fit: contain;
         z-index: 5;
+        transition: transform 500ms ease-out;
+
       }
     }
     .stats {
@@ -143,7 +157,17 @@ export default {}
     }
   }
 }
-.profile:hover {
-  background-color: aqua;
+.body {
+  display: flex;
+  gap: 10rem;
+}
+
+.imageWarp:hover {
+ 
+  img:hover {
+    transform: scale(1.1);
+
+
+  }
 }
 </style>

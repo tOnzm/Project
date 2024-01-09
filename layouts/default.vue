@@ -54,12 +54,12 @@ export default {
       items: [
         {
           icon: 'mdi-home',
-          title: 'Home',
+          title: 'หน้าแรก',
           to: '/',
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          title: 'ไม่มีไร...อย่าไปกด',
           to: '/inspire',
         },
       ],
