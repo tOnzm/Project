@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-row>
     <v-col cols="12" sm="12" md="12">
       <h1>VUE JS</h1>
       <v-row>
@@ -12,13 +12,28 @@
           </NuxtLink>
         </v-col>
       </v-row>
+      <v-row class="body">
+        <v-col
+          v-for="item in 8"
+          :key="item"
+          md="4"
+          cols="6"
+          sm="6"
+          lg="3"
+          class="fixtures"
+        >
+          <FixturesBox item />
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import FixturesBox from '../components/fixtures/index.vue'
 export default {
   name: 'IndexPage',
+  components: { FixturesBox },
   data() {
     return {
       units: [
@@ -35,16 +50,29 @@ export default {
           name: 'tutorials-002',
         },
         {
-          title: '#3 Interpolation and Click Event Listener',
+          title: 'Event and Method',
           id: 3,
           to: '/tutorials/003',
           name: 'tutorials-003',
         },
         {
-          title: '#4 Interpolation and Click Event Listener',
+          title: 'Dictionary and Array Data',
           id: 4,
           to: '/tutorials/004',
           name: 'tutorials-004',
+        },
+        {
+          title: 'Binding CSS Class and Style',
+          id: 5,
+          to: '/tutorials/005',
+          name: 'tutorials-005',
+        },
+        {
+          title: 'Premier League Star Card ',
+          id: 6,
+          to: '/tutorials/006',
+          name: 'tutorials-006',
+          logo: require('../static/logo/manager/man41881.png'),
         },
       ],
     }
@@ -54,9 +82,16 @@ export default {
 
 <style lang="scss" scoped>
 .unitTitle {
-  color: $black;
+  
   font-weight: 800;
+  h3{
+    color: $black;
+  }
+  h4{
+    color: #01579B;
+  }
 }
+
 .unitTitle:hover {
   color: $gray;
 }

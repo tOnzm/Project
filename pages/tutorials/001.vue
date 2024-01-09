@@ -4,7 +4,7 @@
       ><h1>{{ $route.params.title }}</h1></v-col
     >
     <v-col md="12" cols="12"
-      ><h3>{{ count }}</h3></v-col
+      ><h1>{{ count }}</h1></v-col
     >
     <v-col md="12" cols="12"
       ><v-btn @click="onClickCount">กดสิ</v-btn>
@@ -17,11 +17,10 @@
       </NuxtLink>
     </v-col>
     <v-col md="6" cols="6">
-      <NuxtLink to="/toturials/002">
-        <v-btn block @click="onClickNext">หน้าถัดไป</v-btn>
+      <NuxtLink to="/tutorials/002">
+        <v-btn block>หน้าถัดไป</v-btn>
       </NuxtLink>
     </v-col>
-    {{ nextPage }}
   </v-row>
 </template>
 

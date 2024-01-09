@@ -53,8 +53,8 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/',
         },
         {
@@ -64,13 +64,16 @@ export default {
         },
       ],
       miniVariant: false,
-      title: 'Vuetify.js',
+      title: 'ทดสอบ โหลๆ เทสๆ 1 2 3 ',
     }
   },
 }
 </script>
 
 <style lang="scss">
+* {
+  font-family: 'Sarabun', sans-serif;
+}
 a:link {
   text-decoration: none;
 }
