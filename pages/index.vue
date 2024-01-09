@@ -72,7 +72,12 @@ export default {
           id: 6,
           to: '/tutorials/006',
           name: 'tutorials-006',
-          logo: require('../static/logo/manager/man41881.png'),
+        },
+        {
+          title: 'CRUID',
+          id: 7,
+          to: '/tutorials/007',
+          name: 'tutorials-007',
         },
       ],
     }
@@ -82,13 +87,12 @@ export default {
 
 <style lang="scss" scoped>
 .unitTitle {
-  
   font-weight: 800;
-  h3{
+  h3 {
     color: $black;
   }
-  h4{
-    color: #01579B;
+  h4 {
+    color: #01579b;
   }
 }
 
