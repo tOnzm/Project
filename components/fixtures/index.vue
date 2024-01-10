@@ -1,29 +1,35 @@
 <template>
-  <v-row class="fixturesBox" >
-    <v-col cols="12" md="12" class="header">
-      <img
-        src="@/static/logo/competition/competition_5_eflCarabao17_18_small.png"
-        alt=""
-      />
-      <h2>EFL CUP</h2>
+  <v-row class="fixturesBox">
+    <v-col
+      cols="12"
+      md="12"
+      class="header"
+      :style="{
+        backgroundColor: bgColor,
+        backgroundImage: `url(${bgImg})`,
+      }"
+    >
+      <!-- โลโก้รายการแข่งขัน -->
+      <img :src="compLogo" alt="" />
+      <!-- ชื่อรายการแข่งขัน -->
+      <h2>{{ competition }}</h2>
     </v-col>
+
     <v-col cols="12" class="fixtures-abridged">
       <p>All times shown are your <span>local time</span></p>
-      <h3>Wednesday 10 January</h3>
+      <!-- แสดงผล -->
+      <!-- วันที่ -->
+      <h3>{{ kickDate }}</h3>
     </v-col>
-    <v-col class="team">
-      <v-col class="teamData" cols="4" md="4" >
-        <h3>ARS</h3>
-        <img src="@/static/logo/t3.png" alt="" />
-      </v-col>
-      <v-col class="time" cols="4" md="4"><h3>03:00</h3></v-col>
-      <v-col class="teamData" cols="4" md="4"
-        ><img src="@/static/logo/t31.png" alt="" />
-        <h3>CRY</h3>
-      </v-col>
-    </v-col>
+
+    <!-- แทรก detailMatch -->
+    <slot> </slot>
+
+    <!-- ดูการแข่งขันทั้งหมด -->
     <v-col cols="12" class="btnViewAll">
-      <v-btn elevation="0" block>View All Fixtures</v-btn>
+      <NuxtLink to="/">
+        <v-btn elevation="0" block>View All Fixtures</v-btn>
+      </NuxtLink>
     </v-col>
   </v-row>
 </template>
@@ -31,6 +37,21 @@
 <script>
 export default {
   name: 'FixturesBox',
+  props: {
+    competition: { type: String, default: 'ชื่อรายการ' },
+    compLogo: {
+      type: String,
+      default: require('@/static/logo/competition/competition_5_eflCarabao17_18_small.png'),
+    },
+    kickDate: { type: String, default: 'วว/ดด/ปปปป' },
+    homeName: { type: String, default: 'ABC' },
+    homeLogo: { type: String, default: require('@/static/logo/t3.png') },
+    time: { type: String, default: '00:00' },
+    awayLogo: { type: String, default: require('@/static/logo/t31.png') },
+    awayName: { type: String, default: 'DEF' },
+    bgColor: { type: String, default: '#B0BEC5' },
+    bgImg: { type: String, default: require('@/static/logo/bgcomp.png') },
+  },
 }
 </script>
 
@@ -41,14 +62,13 @@ export default {
   margin: 0.1rem;
 }
 .header {
-  background-color: #00945e;
-
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 10px;
   gap: 0.5rem;
+  background-size: cover;
 
   img {
     width: 1.5rem;
@@ -60,31 +80,21 @@ export default {
     padding: 0;
   }
 }
-.time {
-  border: solid 0.1rem #ebe5eb;
-  border-radius: 5px;
-  text-align: center;
-}
-.team {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 50%;
-  }
-  .teamData {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: calc(100vw / 1rem);
-
-  
-  }
-}
 .fixtures-abridged {
   text-align: center;
+  font-size: 0.8rem;
+  line-height: 0.5rem;
+  p{
+    font-size: 0.7rem;
+  }
   span {
     font-weight: 800;
+  }
+  h3 {
+    line-height: 0.5rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding-bottom: 0.75rem;
   }
 }
 .btnViewAll {

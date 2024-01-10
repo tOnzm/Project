@@ -27,7 +27,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -38,13 +40,14 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios',],
+  modules: [
+    '@nuxtjs/axios'
+  ],
   axios: {
-    // proxy: true
+    baseURL: 'http://localhost:4000',
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
