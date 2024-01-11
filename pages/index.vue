@@ -12,7 +12,7 @@
           <div class="circle"></div>
         </div>
       </div>
-      <br>
+      <br />
 
       <v-row>
         <v-col v-for="item in units" :key="item.id" cols="6" md="3">
@@ -96,7 +96,7 @@ export default {
           status: true,
         },
         {
-          title: 'Pokemon API',
+          title: 'DataTable Vuetify + Api +CRUD ',
           id: 9,
           to: '/tutorials/009',
           name: 'tutorials-009',
