@@ -11,6 +11,10 @@
           <h4>ไม่เสร็จ</h4>
           <div class="circle"></div>
         </div>
+        <div md="1" class="working">
+          <h4>กำลังดำเนินการ</h4>
+          <div class="circle"></div>
+        </div>
       </div>
       <br />
 
@@ -19,8 +23,16 @@
           <NuxtLink :to="{ name: item.name, params: { title: item.title } }">
             <div class="unitTitle">
               <h3>เรื่องที่ {{ item.id }}</h3>
+
               <h4
-                :style="{ color: item.status == true ? '#2E7D32' : '#D50000' }"
+                :style="{
+                  color:
+                    item.status == true
+                      ? '#2E7D32'
+                      : item.status === ''
+                      ? '#FF9800'
+                      : '#D50000',
+                }"
               >
                 {{ item.title }}
               </h4>
@@ -100,7 +112,7 @@ export default {
           id: 9,
           to: '/tutorials/009',
           name: 'tutorials-009',
-          status: false,
+          status: '',
         },
       ],
     }
@@ -127,7 +139,8 @@ export default {
   display: flex;
   gap: 1rem;
   .pass,
-  .fail {
+  .fail,
+  .working {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -150,6 +163,14 @@ export default {
       height: 20px;
       border-radius: 50%;
       background-color: #d50000;
+    }
+  }
+  .working {
+    .circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ff9800;
     }
   }
 }
